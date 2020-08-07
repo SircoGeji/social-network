@@ -1,0 +1,26 @@
+.app-wrapper {
+    display: grid;
+    min-width: 720px;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-areas: "h h" "n c";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 7px;
+}
+
+#head {
+    width: 100%;
+    height: 200px;
+}
+
+#ava {
+    width: 150px;
+    height: 150px;
+}
+
+.app-wrapper-content {
+	grid-area: c;
+	background-color: bisque;
+	border-radius: 8px;
+}

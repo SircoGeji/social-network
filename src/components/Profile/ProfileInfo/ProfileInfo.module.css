@@ -1,0 +1,14 @@
+.topImage {
+    width: 100%;
+    height: 200px;
+}
+.profileImage {
+    display: block;
+    width: 150px;
+    height: 150px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.aboutMe {
+    margin-left: 10px;
+}
