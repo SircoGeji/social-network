@@ -11,7 +11,7 @@ import {NavLink} from "react-router-dom";
 // NavLink - "ссылка" для перехода без обновления страницы
 
 const Navbar = () => {
-    return (
+    return <>
         <nav className={s.nav}>
             <div className={s.item}>
                 <NavLink activeClassName={s.activeLink} to="/profile">
@@ -44,7 +44,7 @@ const Navbar = () => {
                 </NavLink>
             </div>
         </nav>
-    )
+    </>
 }
 
 export default Navbar;

@@ -1,10 +1,7 @@
-.users{
+.user{
     display: grid;
     grid-template-columns: 2fr 20fr;
     padding: 10px;
-}
-.selectedPage{
-    font-weight: bold;
 }
 img {
     width: 50px;
