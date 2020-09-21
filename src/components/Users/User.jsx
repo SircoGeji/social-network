@@ -14,7 +14,7 @@ let User = ({user, followingInProgress, follow, unfollow}) => {
                              alt="userImage"/>
                         </NavLink>
                     </div>
-                    <div>
+                    <div className={styles.button}>
                         {user.followed
                             ? <button disabled={followingInProgress
                                 .some(id => id === user.id)}
@@ -26,7 +26,7 @@ let User = ({user, followingInProgress, follow, unfollow}) => {
                 </span>
                 <span>
                     <span>
-                        <div>{user.name}</div>
+                        <div className={styles.user_name}>{user.name}</div>
                         <div>{user.status}</div>
                     </span>
                     <span>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 .app-wrapper {
     display: grid;
     min-width: 720px;
@@ -7,6 +9,8 @@
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-gap: 7px;
+
+    font-family: 'Roboto', sans-serif;
 }
 
 #head {
