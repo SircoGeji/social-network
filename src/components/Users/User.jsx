@@ -18,13 +18,17 @@ let User = ({user, followingInProgress, follow, unfollow}) => {
                         {user.followed
                             ? <button disabled={followingInProgress
                                 .some(id => id === user.id)}
-                                      onClick={() => {unfollow(user.id)}}>Unfollow</button>
+                                      onClick={() => {
+                                          unfollow(user.id)
+                                      }}>Unfollow</button>
                             : <button disabled={followingInProgress
                                 .some(id => id === user.id)}
-                                      onClick={() => {follow(user.id)}}>Follow</button>}
+                                      onClick={() => {
+                                          follow(user.id)
+                                      }}>Follow</button>}
                     </div>
                 </span>
-                <span>
+        <span>
                     <span>
                         <div className={styles.user_name}>{user.name}</div>
                         <div>{user.status}</div>
@@ -34,7 +38,7 @@ let User = ({user, followingInProgress, follow, unfollow}) => {
                         <div>{"user.location.city"}</div>
                     </span>
                 </span>
-            </div>
+    </div>
 }
 
 export default User

@@ -1,11 +1,44 @@
-.selectedPage{
+.selectedPage {
     font-weight: bold;
 }
-.pages{
+
+.pages {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 10px;
 }
-button{
+
+.pages button {
     width: 100px;
+}
+
+.pages button.pages_button {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    background: rgb(207, 207, 207);
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+    transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 50px;
+}
+
+.pages button.pages_button:hover,
+.pages button.pages_button:focus {
+    background: rgb(177, 177, 177);
+}
+
+.pages button.pages_button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.pages button.pages_button:active {
+    transform: scale(0.99);
 }

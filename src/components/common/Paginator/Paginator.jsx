@@ -31,14 +31,29 @@ let Paginator = ({totalUsersCount, pageSize, currentPage, onPageChanged, ...prop
                 : null
         }
 
-        <div>
+        <button
+            className={styles.pages_button}
+            onClick={() => {
+                pages.map(p => {
+                    return (
+                        <span
+                            className={currentPage === p && styles.selectedPage}
+                            onClick={() => {
+                                onPageChanged(p)
+                            }}>{p + " "}
+                </span>
+                    )
+                })
+            }}
+        >
             ...
-        </div>
+        </button>
+
         {
             (currentPage + 1)
                 ? <button
                     onClick={() => {
-                        onPageChanged((currentPage + 1) ? currentPage + 1 : currentPage)
+                        onPageChanged(currentPage + 1)
                     }}
                 >Next</button>
                 : null
