@@ -6,6 +6,8 @@ let Paginator = ({
   pageSize,
   currentPage,
   onPageChanged,
+  setPagesPaginator,
+  getShowMorePages,
   ...props
 }) => {
   let pagesCount = Math.ceil(totalUsersCount / pageSize);
@@ -14,6 +16,7 @@ let Paginator = ({
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
+
   /*{
         {pages.map(p => {
             return (
@@ -39,25 +42,37 @@ let Paginator = ({
           </button>
         ) : null}
 
-        <button
-          className={styles.pages_button}
-          onClick={() => {
-            pages.map((p) => {
-              return (
-                <span
-                  className={currentPage === p && styles.selectedPage}
-                  onClick={() => {
-                    onPageChanged(p);
-                  }}
-                >
-                  {p + " "}
-                </span>
-              );
-            });
-          }}
-        >
-          ...
-        </button>
+        {getShowMorePages && "1 2 3 4 5 6 7 8 9 10"}
+        {!getShowMorePages && (
+          <button
+            onClick={() => {
+              setPagesPaginator(true);
+            }}
+            className={styles.pages_button}
+          >
+            ...
+          </button>
+        )}
+
+        {/*<button*/}
+        {/*  className={styles.pages_button}*/}
+        {/*  onClick={() => {*/}
+        {/*    pages.map((p) => {*/}
+        {/*      return (*/}
+        {/*        <span*/}
+        {/*          className={currentPage === p && styles.selectedPage}*/}
+        {/*          onClick={() => {*/}
+        {/*            onPageChanged(p);*/}
+        {/*          }}*/}
+        {/*        >*/}
+        {/*          {p + " "}*/}
+        {/*        </span>*/}
+        {/*      );*/}
+        {/*    });*/}
+        {/*  }}*/}
+        {/*>*/}
+        {/*  ...*/}
+        {/*</button>*/}
 
         {currentPage + 1 ? (
           <button

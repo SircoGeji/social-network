@@ -8,6 +8,7 @@ const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS";
+const SET_SHOW_MORE_PAGES = "SET_SHOW_MORE_PAGES";
 
 let initialState = {
   users: [],
@@ -16,6 +17,7 @@ let initialState = {
   currentPage: 1,
   isFetching: false,
   followingInProgress: [],
+  showMorePages: false,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -61,6 +63,11 @@ const usersReducer = (state = initialState, action) => {
           ? [...state.followingInProgress, action.userId]
           : state.followingInProgress.filter((id) => id !== action.userId),
       };
+    case SET_SHOW_MORE_PAGES:
+      return {
+        ...state,
+        showMorePages: action.setPagesPaginator,
+      };
     default:
       return state;
   }
@@ -72,6 +79,10 @@ export const setUsers = (users) => ({ type: SET_USERS, users });
 export const setCurrentPage = (currentPage) => ({
   type: SET_CURRENT_PAGE,
   currentPage,
+});
+export const setToggleShowMorePages = (setPagesPaginator) => ({
+  type: SET_SHOW_MORE_PAGES,
+  setPagesPaginator,
 });
 export const setTotalUsersCount = (count) => ({
   type: SET_TOTAL_USERS_COUNT,

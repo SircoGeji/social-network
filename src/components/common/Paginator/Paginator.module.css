@@ -2,17 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid red 2px;
   margin: 10px auto;
 }
 .selectedPage {
   font-weight: bold;
 }
-
-.paginator {
-  border: solid black 2px;
-}
-
 .paginator button {
   width: 80px;
 }
