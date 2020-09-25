@@ -1,20 +1,21 @@
 import React from "react";
-import "./ProfileInfo.sass";
+import styles from "./ProfileInfo.module.sass";
 import Preloader from "../../common/preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
+import userPhoto from "../../../assets/images/user.jpg";
 
 const ProfileInfo = ({ profile, status, updateStatus }) => {
   return (
     <div>
       <img
-        className="profileImage"
-        src={profile.photos.large}
+        src={profile.photos.large != null ? profile.photos.large : userPhoto}
         alt="profileImage"
+        className={styles.profileImage}
       />
-      <div className="aboutMe">
+      <div className={styles.aboutMe}>
         <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
       </div>
-      <div className="aboutMe">{profile.aboutMe}</div>
+      <div className={styles.aboutMe}>{profile.aboutMe}</div>
     </div>
   );
 };

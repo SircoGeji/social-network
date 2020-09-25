@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { login, logout } from "../../redux/auth-reducer";
 import { Redirect } from "react-router-dom";
 import s from "../common/FormsControls/FormsControls.sass";
-import styles from "./Login.module.css";
+import styles from "./Login.module.sass";
 
 const maxLength20 = maxLengthCreator(20);
 

@@ -1,16 +1,19 @@
-import React from 'react';
-import s from './Post.module.css';
+import React from "react";
+import s from "./Post.module.sass";
 
 const Post = (props) => {
-  return(
+  return (
     <div className={s.item}>
-    <img src="https://www.1zoom.ru/big2/946/289597-frederika.jpg" alt="avatar.pic" />
-    {props.message}
-    <div>
-      <span>Like: {props.likesCount}</span>
+      <img
+        src="https://www.1zoom.ru/big2/946/289597-frederika.jpg"
+        alt="avatar.pic"
+      />
+      {props.message}
+      <div>
+        <span>Like: {props.likesCount}</span>
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
 export default Post;
