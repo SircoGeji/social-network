@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.sass";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import { Route, withRouter } from "react-router-dom";
 import News from "./components/News/News";

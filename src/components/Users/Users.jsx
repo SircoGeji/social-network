@@ -13,8 +13,8 @@ let Users = ({
   followingInProgress,
   follow,
   unfollow,
-  setPagesPaginator,
-  getShowMorePages,
+  onPagesPaginator,
+  showMorePages,
   ...props
 }) => {
   return (
@@ -24,8 +24,8 @@ let Users = ({
         pageSize={pageSize}
         currentPage={currentPage}
         onPageChanged={onPageChanged}
-        setPagesPaginator={setPagesPaginator}
-        getShowMorePages={getShowMorePages}
+        onPagesPaginator={onPagesPaginator}
+        showMorePages={showMorePages}
       />
       {users.map((u) => (
         <User

@@ -6,8 +6,8 @@ let Paginator = ({
   pageSize,
   currentPage,
   onPageChanged,
-  setPagesPaginator,
-  getShowMorePages,
+  onPagesPaginator,
+  showMorePages,
   ...props
 }) => {
   let pagesCount = Math.ceil(totalUsersCount / pageSize);
@@ -16,6 +16,11 @@ let Paginator = ({
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
+
+  let pagesClose = pages.slice(
+    currentPage < 7 ? 0 : currentPage - 5,
+    currentPage < 7 ? 11 : currentPage + 5
+  );
 
   /*{
         {pages.map(p => {
@@ -42,37 +47,39 @@ let Paginator = ({
           </button>
         ) : null}
 
-        {getShowMorePages && "1 2 3 4 5 6 7 8 9 10"}
-        {!getShowMorePages && (
+        {
+          showMorePages && (
+            <span
+              className={pagesClose.indexOf(currentPage) && styles.selectedPage}
+              onClick={() => {
+                //onPageChanged(pagesClose.indexOf());
+              }}
+            >
+              {pagesClose}
+            </span>
+          )
+          // <span
+          //   className={currentPage === p && styles.selectedPage}
+          //   onClick={() => {
+          //     onPageChanged(p);
+          //     console.log(pages);
+          //     console.log(pages.slice(currentPage, 11));
+          //   }}
+          // >
+          //   {p + " "}
+          // </span>
+        }
+        {!showMorePages && (
           <button
             onClick={() => {
-              setPagesPaginator(true);
+              onPagesPaginator(true);
+              console.log(showMorePages);
             }}
             className={styles.pages_button}
           >
             ...
           </button>
         )}
-
-        {/*<button*/}
-        {/*  className={styles.pages_button}*/}
-        {/*  onClick={() => {*/}
-        {/*    pages.map((p) => {*/}
-        {/*      return (*/}
-        {/*        <span*/}
-        {/*          className={currentPage === p && styles.selectedPage}*/}
-        {/*          onClick={() => {*/}
-        {/*            onPageChanged(p);*/}
-        {/*          }}*/}
-        {/*        >*/}
-        {/*          {p + " "}*/}
-        {/*        </span>*/}
-        {/*      );*/}
-        {/*    });*/}
-        {/*  }}*/}
-        {/*>*/}
-        {/*  ...*/}
-        {/*</button>*/}
 
         {currentPage + 1 ? (
           <button

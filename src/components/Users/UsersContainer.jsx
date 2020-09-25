@@ -8,6 +8,7 @@ import {
   toggleFollowingProgress,
   unfollow,
   setToggleShowMorePages,
+  showMorePages,
 } from "../../redux/users-reducer";
 import Preloader from "../common/preloader/Preloader";
 import { compose } from "redux";
@@ -33,6 +34,10 @@ class UsersContainer extends React.Component {
     this.props.requestUsers(pageNumber, pageSize);
   };
 
+  onPagesPaginator = (bool_state) => {
+    this.props.setToggleShowMorePages(bool_state);
+  };
+
   render(props) {
     return (
       <>
@@ -49,7 +54,8 @@ class UsersContainer extends React.Component {
             unfollow={this.props.unfollow}
             followingInProgress={this.props.followingInProgress}
             toggleFollowingProgress={this.props.toggleFollowingProgress}
-            setPagesPaginator={this.props.setToggleShowMorePages}
+            onPagesPaginator={this.onPagesPaginator}
+            showMorePages={this.props.showMorePages}
           />
         )}
       </>
@@ -66,7 +72,7 @@ let mapStateToProps = (state) => {
     isFetching: getIsFetching(state),
     toggleFollowingProgress: getToggleFollowingProgress(state),
     followingInProgress: getFollowingInProgress(state),
-    getShowMorePages: getToggleShowMorePages(state),
+    showMorePages: getToggleShowMorePages(state),
   };
 };
 
