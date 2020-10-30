@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./ProfileInfo.module.sass";
-import Preloader from "../../common/preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../../assets/images/user.jpg";
 

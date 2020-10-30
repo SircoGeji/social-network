@@ -8,7 +8,6 @@ import {
   toggleFollowingProgress,
   unfollow,
   setToggleShowMorePages,
-  showMorePages,
 } from "../../redux/users-reducer";
 import Preloader from "../common/preloader/Preloader";
 import { compose } from "redux";

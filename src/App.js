@@ -21,7 +21,6 @@ class App extends React.Component {
   }
 
   render() {
-    // App - function
     if (!this.props.initialized) {
       return <Preloader />;
     }
@@ -30,7 +29,8 @@ class App extends React.Component {
       <div className="app-wrapper">
         <HeaderContainer />
         <Navbar />
-        <div className="app-wrapper-content">
+        <div className="app-wrapper__content">
+          <Route path="" render={() => <LoginPage />} />
           <Route
             path="/dialogs"
             render={() => <DialogsContainer store={this.props.store} />}
